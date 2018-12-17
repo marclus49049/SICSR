@@ -56,6 +56,23 @@ public class Assignment2 extends AppCompatActivity implements View.OnClickListen
         return(1);
     }
 
+    void lastOp(){
+        switch(lastOperation){
+            case 1:
+                displayNum = "" + add(ans, num);
+                break;
+            case 2:
+                displayNum = "" + sub(ans, num);
+                break;
+            case 3:
+                displayNum = "" + mul(ans, num);
+                break;
+            case 4:
+                displayNum = "" + div(ans, num);
+                break;
+        }
+    }
+
 
     @Override
     public void onClick(View v) {
@@ -130,6 +147,7 @@ public class Assignment2 extends AppCompatActivity implements View.OnClickListen
                     ans = 1;
                     startBit = false;
                 }
+
                 ans = mul(ans, num);
                 lastOperation = 3;
                 displayNum = "";
@@ -143,6 +161,7 @@ public class Assignment2 extends AppCompatActivity implements View.OnClickListen
                     displayNum = "";
                     break;
                 }
+
                 ans = div(ans, num);
                 lastOperation = 4;
                 displayNum = "";
@@ -154,20 +173,7 @@ public class Assignment2 extends AppCompatActivity implements View.OnClickListen
                 startBit = true;
                 break;
             case R.id.equal:
-                switch(lastOperation){
-                    case 1:
-                        displayNum = "" + add(ans, num);
-                        break;
-                    case 2:
-                        displayNum = "" + sub(ans, num);
-                        break;
-                    case 3:
-                        displayNum = "" + mul(ans, num);
-                        break;
-                    case 4:
-                        displayNum = "" + div(ans, num);
-                        break;
-                }
+                lastOp();
                 lastOperation = 0;
                 ans = 0;
                 startBit = true;

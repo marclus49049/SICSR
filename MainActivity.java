@@ -15,17 +15,24 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button assign1, assign2;
+    Button assign[], classBtn[];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_main);
-        assign1 = findViewById(R.id.assignment1);
-        assign2 = findViewById(R.id.assignment2);
 
-        assign1.setOnClickListener(this);
-        assign2.setOnClickListener(this);
+        assign = new Button[]{findViewById(R.id.assignment1), findViewById(R.id.assignment2), findViewById(R.id.assignment3), findViewById(R.id.assignment4), findViewById(R.id.assignment5)};
+
+        classBtn = new Button[]{findViewById(R.id.CheckBox), findViewById(R.id.RadioButton), findViewById(R.id.Spinner)};
+
+        for(int i=0; i < assign.length; i++){
+            assign[i].setOnClickListener(this);
+        }
+        for(int i=0; i < classBtn.length; i++){
+            classBtn[i].setOnClickListener(this);
+        }
+
 
     }
     @Override
@@ -36,6 +43,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.assignment2:
                 this.startActivity(new Intent(this, Assignment2.class));
+                break;
+            case R.id.CheckBox:
+                this.startActivity(new Intent(this, ClassCheckBox.class));
+                break;
+            case R.id.RadioButton:
+                this.startActivity(new Intent(this, ClassRadioButton.class));
+                break;
+            case R.id.Spinner:
+                this.startActivity(new Intent(this, ClassSpinner.class));
+                break;
+            case R.id.assignment3:
+                this.startActivity(new Intent(this, Assignment3.class));
+                break;
+            case R.id.assignment4:
+                this.startActivity(new Intent(this, Assignment4.class));
+                break;
+            case R.id.assignment5:
+                this.startActivity(new Intent(this, Assignment5.class));
                 break;
         }
     }
