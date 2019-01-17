@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_main);
 
-        assign = new Button[]{findViewById(R.id.assignment1), findViewById(R.id.assignment2), findViewById(R.id.assignment3), findViewById(R.id.assignment4), findViewById(R.id.assignment5)};
+        assign = new Button[]{findViewById(R.id.assignment1), findViewById(R.id.assignment2), findViewById(R.id.assignment3), findViewById(R.id.assignment4), findViewById(R.id.assignment5), findViewById(R.id.assignment6), findViewById(R.id.assignment7)};
 
         classBtn = new Button[]{findViewById(R.id.CheckBox), findViewById(R.id.RadioButton), findViewById(R.id.Spinner)};
 
@@ -61,6 +61,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.assignment5:
                 this.startActivity(new Intent(this, Assignment5.class));
+                break;
+            case R.id.assignment6:
+                this.startActivity(new Intent(this, Assignment6.class));
+                break;
+            case R.id.assignment7:
+                this.startActivity(new Intent(this, Assignment7.class));
                 break;
         }
     }
