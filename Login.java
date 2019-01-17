@@ -46,6 +46,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             if (edt[0].getText().toString().equals(user) && edt[1].getText().toString().equals(pass)){
                 i = new Intent(this, Display.class);
                 i.putExtra("username", user);
+                i.putExtra("flag", 0);
                 startActivity(i);
             } else {
                 Toast.makeText(this, "Username or Password is wrong", Toast.LENGTH_SHORT).show();
